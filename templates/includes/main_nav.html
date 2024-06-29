@@ -5,11 +5,10 @@
                 Collection
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="collection-link">
-                <a href="" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item ">By Rating</a>
-                <a href="" class="dropdown-item ">By Category</a>
-                <a href="" class="dropdown-item ">By Size</a>
-                <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
+                <a href="{% url 'products' %}?category=wedding" class="dropdown-item">Wedding</a>
+                <a href="{% url 'products' %}?category=office,business" class="dropdown-item ">Office or Business</a>
+                <a href="{% url 'products' %}?category=prom" class="dropdown-item ">Prom</a>
+                <a href="{% url 'products' %}?category=wedding,office,business,prom" class="dropdown-item">All Products</a>
             </div>
         </li>
 
