@@ -1,9 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
+from django.db.models.functions import Lower
 from .models import Product, Category
-
-# Create your views here.
 
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
@@ -13,6 +12,9 @@ def all_products(request):
     categories = None
     sort = None
     direction = None
+
+    # Fetch all categories for the dropdown menu
+    all_categories = Category.objects.all()
 
     if request.GET:
         if 'sort' in request.GET:
@@ -30,27 +32,29 @@ def all_products(request):
             products = products.order_by(sortkey)
 
         if 'category' in request.GET:
-            categories = request.GET['category'].split(',')
+            categories = request.GET.getlist('category')  # Get all selected categories as a list
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
 
-    if request.GET:
         if 'q' in request.GET:
             query = request.GET['q']
-            if not query:
+            if query:
+                queries = Q(name__icontains=query) | Q(description__icontains=query)
+                products = products.filter(queries)
+            else:
                 messages.error(request, "You didn't enter any search criteria!")
-                return redirect(reverse('products'))
-            
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
-            products = products.filter(queries)
 
-    current_sorting = f'{sort}_{direction}'
+    current_sorting = f'{sort}_{direction}' if sort and direction else None
+
+    # Extracting names from all_categories queryset
+    all_category_names = list(all_categories.values_list('name', flat=True))
 
     context = {
         'products': products,
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
+        'all_categories': all_category_names,
     }
 
     return render(request, 'products/products.html', context)
