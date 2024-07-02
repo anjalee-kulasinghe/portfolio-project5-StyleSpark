@@ -23,6 +23,12 @@ body {
     text-transform: uppercase;
 }
 
+.retail-price {
+    color: grey;
+    font-weight: normal;
+    font-size: 0.8em;
+}
+
 .main-logo-link {
     width: fit-content;
 }
