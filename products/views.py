@@ -6,12 +6,11 @@ from .models import Product, Category
 
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
-
     products = Product.objects.all()
     query = None
     categories = None
-    sort = None
-    direction = None
+    sort = request.GET.get('sort', None)
+    direction = request.GET.get('direction', 'asc')
 
     # Fetch all categories for the dropdown menu
     all_categories = Category.objects.all()
@@ -32,12 +31,12 @@ def all_products(request):
             products = products.order_by(sortkey)
 
         if 'category' in request.GET:
-            categories = request.GET.getlist('category')  # Get all selected categories as a list
-        if categories:  # Check if any categories are selected
-            products = products.filter(category__name__in=categories)
-            categories = Category.objects.filter(name__in=categories)
-        else:  # If no categories are selected, show all products
-            products = Product.objects.all()
+            categories = request.GET.getlist('category')
+            if categories:
+                products = products.filter(category__name__in=categories)
+                categories = Category.objects.filter(name__in=categories)
+            else:
+                categories = None
 
         if 'q' in request.GET:
             query = request.GET['q']
@@ -62,14 +61,10 @@ def all_products(request):
 
     return render(request, 'products/products.html', context)
 
-
 def product_detail(request, product_id):
     """ A view to show individual product details """
-
     product = get_object_or_404(Product, pk=product_id)
-
     context = {
         'product': product,
     }
-
     return render(request, 'products/product_detail.html', context)

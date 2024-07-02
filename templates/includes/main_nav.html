@@ -15,19 +15,17 @@
                 {% else %}
                     <a href="{% url 'products' %}?category={{ all_categories|join:',' }}" class="dropdown-item">All Products</a>
                 {% endif %}
-
             </div>
         </li>
 
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                New In
+                All Products
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="new-in-link">
+                <a href="{% url 'products' %}?sort=name&direction=asc" class="dropdown-item">By Name</a>
                 <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
                 <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item">By Rating</a>
-                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item">By Category</a>
-                <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
             </div>
         </li>
 
