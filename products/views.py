@@ -23,7 +23,7 @@ def all_products(request):
             if sortkey == 'name':
                 sortkey = 'lower_name'
                 products = products.annotate(lower_name=Lower('name'))
-            elif sortkey == 'category':
+            if sortkey == 'category':
                 sortkey = 'category__name'
             if 'direction' in request.GET:
                 direction = request.GET['direction']
@@ -33,8 +33,11 @@ def all_products(request):
 
         if 'category' in request.GET:
             categories = request.GET.getlist('category')  # Get all selected categories as a list
+        if categories:  # Check if any categories are selected
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
+        else:  # If no categories are selected, show all products
+            products = Product.objects.all()
 
         if 'q' in request.GET:
             query = request.GET['q']
