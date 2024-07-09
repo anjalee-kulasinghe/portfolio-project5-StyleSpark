@@ -119,4 +119,3 @@ def remove_from_cart(request, item_id):
     except Exception as e:
         messages.error(request, f"Error removing item from cart: {str(e)}")
         return HttpResponseBadRequest(f"Error removing item from cart: {str(e)}")
-
