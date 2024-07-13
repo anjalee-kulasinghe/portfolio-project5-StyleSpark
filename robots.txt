@@ -1,0 +1,48 @@
+User-agent: *
+
+Disallow: /admin/      # Disallow crawling of the Django admin panel
+Disallow: /media/      # Disallow crawling of media files
+Disallow: /static/     # Disallow crawling of static files
+
+# Exclude specific directories or files if needed
+Disallow: /cart/_pycache/
+Disallow: /checkout/_pycache/
+Disallow: /home/_pycache/
+Disallow: /products/_pycache/
+Disallow: /profiles/_pycache/
+Disallow: /StyleSpark/_pycache/
+
+# Exclude migration files
+Disallow: /cart/migration/
+Disallow: /checkout/migration/
+Disallow: /home/migration/
+Disallow: /products/migration/
+Disallow: /profiles/migration/
+Disallow: /StyleSpark/migration/
+
+# Exclude template tags and contexts (if not needed for search indexing)
+Disallow: /cart/templatetags/
+Disallow: /cart/contexts/
+Disallow: /checkout/templatetags/
+Disallow: /checkout/contexts/
+Disallow: /home/templatetags/
+Disallow: /home/contexts/
+Disallow: /products/templatetags/
+Disallow: /products/contexts/
+Disallow: /profiles/templatetags/
+Disallow: /profiles/contexts/
+
+# Exclude specific files
+Disallow: /README.md
+Disallow: /manage.py
+Disallow: /db.sqlite3
+Disallow: /requirements.txt
+Disallow: /robots.txt
+Disallow: /static/favicon.ico
+
+# Exclude allauth and user session templates
+Disallow: /templates/allauth/
+Disallow: /templates/usersessions/
+
+# Allow sitemap file
+Sitemap: https://yourdomain.com/sitemap.xml
