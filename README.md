@@ -502,6 +502,7 @@ The purpose of the dress rental platform is to provide customers with a convenie
 - Django Python
 - Heroku
 - Balsamiq
+- Bootstrap
 
 ### Features
 
