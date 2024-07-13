@@ -1,131 +1,115 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# StyleSpark
 
-Welcome Anjalee Kulasinghe,
+## Code Institute - E-Commerce Applications Portfolio Project.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Find your perfect look for any occasion with StyleSpark party dress rental service. Choose from a wide range of stylish, high-quality dresses for all your events, and rent your favorite at a fraction of the retail price.
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
+## Table of Contents
 
-## Gitpod Reminders
+- [Project Structure](#project-structure)
+- [Demo](#demo)
+- [UX](#ux)
+- [User Stories](#user-stories)
+- [Strategy](#strategy)
+- [Scope](#scope)
+- [Structure](#structure)
+- [Technologies](#technologies)
+- [Features](#features)
+- [Testing](#testing)
+- [Deployment](#deployment)
+- [Credits](#credits)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Project Structure
 
-`python3 -m http.server`
 
-A blue button should appear to click: _Make Public_,
+## Demo
 
-Another blue button should appear to click: _Open Browser_.
+![Website look on different devices](static/readme-assets/device_look.PNG)
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+### Live Demo
 
-A blue button should appear to click: _Make Public_,
+A live demo of the website can be found [here](https://example.com/).
 
-Another blue button should appear to click: _Open Browser_.
+## UX
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+The website targets three user groups: admins, registered users, and visitors. It focuses on simplicity and easy navigation, centering on showcasing blog articles related to Sri Lanka.
 
-To log into the Heroku toolbelt CLI:
+## User Stories
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+As the developer, I aimed to secure this travel blog, empowering users to create profiles, share adventures through posts with photos, and interact with each other's content. For deeper exploration, users can search and discover new destinations based on keywords, locations, or trending topics, while admins manage users and curate featured content.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
+### Strategy
 
-### Connecting your Mongo database
+This travel blog serves as a gateway to discover Sri Lanka's hidden beauty through user-generated travel stories and photos. Users can explore new destinations and budget-friendly adventures through search, trending topics, and curated content by admins. The blog leverages SEO and collaborations to reach new explorers and potential travelers.
 
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
+### Scope
 
-------
+The travel blog focuses on user-generated content, allowing users to create profiles, share stories and photos in blog posts, and interact with each other's content. Search and discovery functionalities help users explore destinations based on keywords, locations, or trends, while admins manage users and curate featured content on the homepage.
 
-## Release History
+### Structure
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+The website follows a traditional web structure with a persistent top navigation bar allowing access to different sections. It includes sections for Home, Blog, City Guide, Food, Travel Tips, Contact Us, Search, Sign In, Sign Up, and Logout, facilitating easy navigation and user engagement.
 
-**June 18, 2024,** Add Mongo back into template
+### Technologies
 
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
+- HTML
+- CSS
+- Django Python
+- Heroku
+- Balsamiq
 
-**May 28 2024:** Fix Mongo and Links installs
+### Features
 
-**April 26 2024:** Update node version to 16
+#### Existing Features
 
-**September 20 2023:** Update Python version to 3.9.17.
+- Navigation Bar: Provides easy access to different sections of the site, including Home, Products, Cart, Checkout, Profiles, and other relevant pages.
+- Home: Introduces users to StyleSpark's party dress rental service, showcasing its offerings and inviting users to explore further.
+- Cart: Allows users to manage their selected items before checkout, providing a summary and options for modification.
+- Checkout: Guides users through the payment process for renting dresses, ensuring a seamless transaction experience.
+- Products: Displays a range of stylish dresses available for rent, categorized and detailed to assist users in making selections.
+  - Categorization:
+    - Categories: Dresses are categorized based on types such as cocktail dresses, new arrivals, etc., facilitating easy browsing according to user preferences.
+    - Tags: Products may be tagged with attributes like color, size, material, occasion (e.g., wedding, party), helping users refine searches and find specific items quickly.
+- Search: Enables users to find specific blog posts or products by entering keywords, enhancing usability and navigation efficiency.
+- Sign Up, Sign In, Logout: Provides essential user authentication functionalities, allowing new users to register, existing users to log in securely, and all users to log out when necessary.
+- Admin Functionality: Empowers administrators to manage user accounts, oversee product listings, and monitor site activity effectively.
+- Sorting: Enables users to arrange products or search results based on relevant criteria such as price, popularity, or category.
+- Filtering: Allows users to narrow down product listings or search results based on specific attributes or preferences.
+- Responsive Design: Ensures optimal viewing and interaction experience across a wide range of devices, enhancing accessibility and usability.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+#### Features Left to Implement
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+- Edit Profile Page: Allow users to edit their profiles.
+- Add more images: Enable users to see the different views of the dress.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+## Testing
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+- Tested on Chrome, Firefox, Edge, and Samsung Galaxy S23 Ultra.
+- Responsive across different screen sizes.
+- Functional forms and database interactions.
+- User management and content creation features tested extensively.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+## Deployment
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+This project was deployed using Heroku. Clone the repository, create a new Heroku app, link it to GitHub, and click Deploy.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+## Credits
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+### Content
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+- Stack Overflow for error handling tips.
+- Bootstrap for layout and navigation components.
+- Codemy.com YouTube for blog post comment implementation.
+- Blog content generated using Google Gemini AI.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+### Media
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+- Images from Pixabay and Pexels.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+### Acknowledgements
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+- Code Institute Full Stack Toolkit Portfolio Project.
+- Code Institute Tutor Support Team.
+- Mentor: Medale Oluwafemi.
+- Grammar and spelling corrections using quillbot.com.
