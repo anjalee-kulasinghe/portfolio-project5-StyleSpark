@@ -24,7 +24,7 @@ Find your perfect look for any occasion with StyleSpark party dress rental servi
 
 ## Demo
 
-![Website look on different devices](static/readme-assets/device_look.PNG)
+![Website look on different devices](media/readme-assets/device_look.PNG)
 
 ### Live Demo
 
@@ -85,10 +85,51 @@ The website follows a traditional web structure with a persistent top navigation
 
 ## Testing
 
-- Tested on Chrome, Firefox, Edge, and Samsung Galaxy S23 Ultra.
-- Responsive across different screen sizes.
-- Functional forms and database interactions.
-- User management and content creation features tested extensively.
+1) Responsive Design Testing:
+    - Chrome DevTools:
+      - Open your website in Chrome.
+      - Right-click and select "Inspect" or press Ctrl+Shift+I.
+      - Click the "Toggle device toolbar" button (or press Ctrl+Shift+M).
+      - Select various devices from the dropdown list or enter custom dimensions.
+      - Ensure the layout adjusts correctly for all screen sizes.
+    - Manual Testing:
+      - Manually test your application on different physical devices if available, like the Samsung Galaxy S23 Ultra.
+2) Cross-Browser Testing:
+    - Chrome:
+      Open the website and check all functionalities.
+    - Firefox:
+      Repeat the same steps as in Chrome.
+      Check if there are any specific issues related to Firefox.
+    - Brave:
+      Follow the same process to ensure Brave compatibility.
+    - Edge:
+      Follow the same process to ensure Edge compatibility.
+3) Functional Testing:
+    - Forms:
+      - Ensure all form fields accept input as expected.
+      - Test form validation (both client-side and server-side).
+      - Verify successful form submissions and error handling
+4) User Management:
+      - User Registration:
+        - Test user sign-up processes, including email verification if applicable.
+      - User Login:
+        - Verify login functionality with correct and incorrect credentials.
+      - Password Management:
+        - Test password reset and change features.
+      - Role-Based Access Control:
+        - Ensure users have appropriate access based on their roles.
+5) Content Creation Features:
+      - Content Addition:
+        - Test adding new content as different user roles.
+      - Content Editing:
+        - Verify that content can be edited and changes are reflected appropriately.
+      - Content Deletion:
+        - Ensure that content deletion works and is irreversible if intended.
+6) Additional Testing:
+    - Performance Testing:
+      - Use tools like Lighthouse to check performance, accessibility, and SEO.
+    - Security Testing:
+      - Conduct basic security testing to check for vulnerabilities like SQL injection.
 
 ## Deployment
 
@@ -98,18 +139,17 @@ This project was deployed using Heroku. Clone the repository, create a new Herok
 
 ### Content
 
+- Main code was taken from the Code Institute's [Boutique_ado_v1](https://github.com/Code-Institute-Solutions/boutique_ado_v1/tree/master) project.
 - Stack Overflow for error handling tips.
 - Bootstrap for layout and navigation components.
-- Codemy.com YouTube for blog post comment implementation.
-- Blog content generated using Google Gemini AI.
 
 ### Media
 
-- Images from Pixabay and Pexels.
+- Images from Zalendo.se, Pixabay and Pexels.
 
 ### Acknowledgements
 
-- Code Institute Full Stack Toolkit Portfolio Project.
+- Code Institute Building an E-Commerce Platform
 - Code Institute Tutor Support Team.
 - Mentor: Medale Oluwafemi.
 - Grammar and spelling corrections using quillbot.com.
