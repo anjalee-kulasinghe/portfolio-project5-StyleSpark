@@ -329,11 +329,97 @@ As an admin, I want to analyze the performance of different dresses so that I ca
 
 ### Strategy
 
-This travel blog serves as a gateway to discover Sri Lanka's hidden beauty through user-generated travel stories and photos. Users can explore new destinations and budget-friendly adventures through search, trending topics, and curated content by admins. The blog leverages SEO and collaborations to reach new explorers and potential travelers.
+Our strategy focuses on delivering a seamless and enjoyable experience for both customers and administrators, ensuring a robust and efficient dress rental platform. Key components of our strategy include:
+
+#### Customer Experience
+Enhanced Browsing and Searching: We prioritize intuitive browsing and searching functionalities, allowing customers to easily find dresses by category, and different sorting methods such as price. Our goal is to make the shopping experience effortless and tailored to individual preferences.
+
+#### Detailed Dress Information: 
+Providing comprehensive details such as size guides, materials, rental prices, and original prices ensures customers can make informed decisions. High-quality images from multiple angles enhance transparency and trust in the rental process.
+
+#### Customer Reviews and Ratings: 
+We encourage customer feedback through reviews and ratings, enabling prospective renters to gauge dress quality and fit based on real experiences. Sorting options by date and rating help users find the most relevant feedback quickly.
+
+#### Efficient Rental Process: 
+Simplifying the rental process with clear options for rental duration, straightforward checkout, and convenient return procedures ensures a hassle-free experience from start to finish.
+
+#### Account Management: 
+Secure account creation, easy login, and personalized dashboards empower customers to manage their orders, rentals, and personal information effortlessly.
+
+#### Admin/Owner Operations Efficient Inventory Management: 
+Our system supports admins in adding, updating, and removing dresses seamlessly. Real-time updates ensure inventory accuracy, while notifications for significant changes keep customers informed.
+
+#### Order Management: 
+Admins can efficiently handle orders with a centralized dashboard, filtering by status and updating order progress with tracking information. This ensures timely processing and delivery of rentals.
+
+#### Customer Support and Reviews Management: 
+We prioritize responsive customer support, managing inquiries, and addressing issues promptly. Admin tools for reviewing and moderating customer feedback help maintain service quality and resolve concerns effectively.
+
+#### Continuous Improvement
+- Feedback Loop: Regularly gathering and analyzing user feedback allows us to continuously improve our platform. Iterative updates and feature enhancements ensure we meet evolving customer needs and industry standards.
+
+- Security and Reliability: Upholding robust security measures and ensuring platform reliability are fundamental to maintaining customer trust and data integrity.
 
 ### Scope
 
-The travel blog focuses on user-generated content, allowing users to create profiles, share stories and photos in blog posts, and interact with each other's content. Search and discovery functionalities help users explore destinations based on keywords, locations, or trends, while admins manage users and curate featured content on the homepage.
+#### Purpose
+The purpose of the dress rental platform is to provide customers with a convenient and enjoyable way to rent dresses for various occasions, while offering administrators robust tools for managing inventory, orders, customer interactions, and business analytics.
+
+#### Features and Functionality
+
+##### Customer-Facing Features
+
+1. **Browsing and Searching**
+   - Users can browse dresses by categories such as evening wear, cocktail dresses, and wedding attire.
+   - Filtering options by size, color, and price are available to help users find dresses that meet their preferences.
+   - A search functionality allows users to quickly locate specific dresses by entering keywords.
+
+2. **Dress Details**
+   - Each dress listing includes comprehensive information such as size guides, materials, rental prices, and original prices.
+   - High-quality images from multiple angles (front, back, side) provide a detailed view of each dress.
+
+3. **Customer Reviews and Ratings**
+   - Users can read and contribute reviews and ratings based on their rental experiences.
+   - Reviews are sortable by date and rating to help users make informed decisions.
+
+4. **Rental Process**
+   - Users can select rental durations (e.g., 4 days, 7 days) and view updated rental prices accordingly.
+   - A streamlined checkout process allows users to add dresses to their cart and complete the rental transaction.
+
+5. **Account Management**
+   - Users can create accounts using email and password, enabling them to manage their personal information, order history, and rentals.
+   - A personalized dashboard provides users with an overview of their account activities and settings.
+
+6. **Payment and Delivery/Pickup**
+   - Multiple secure payment options (e.g., credit card, PayPal) are available at checkout.
+   - Users can provide delivery addresses for dress shipment or select pickup options for local availability.
+
+7. **Order Tracking and Management**
+   - Users receive tracking information for shipped dresses and can monitor order statuses through their account dashboard.
+   - The platform provides users with details for scheduled pickup locations and times.
+
+8. **Return Process**
+   - Detailed instructions for returning dresses, including packaging and shipping labels, are accessible through the platform.
+   - Users can schedule return pickups for added convenience.
+
+##### Admin-Facing Features
+
+1. **Inventory Management**
+   - Admins can add new dresses to the inventory with detailed specifications and images.
+   - Updates to dress availability and rental prices are reflected in real-time across the platform.
+
+2. **Order Management**
+   - A centralized dashboard allows admins to view and manage customer orders, including order status updates and tracking information.
+   - Filtering options by order status (e.g., pending, shipped, returned) streamline order handling.
+
+3. **Customer Support**
+   - Admins can respond to customer inquiries and support tickets promptly through dedicated tools.
+   - Tools for moderating customer reviews help maintain service quality and address customer concerns effectively.
+
+4. **Analytics and Reporting**
+   - Admins have access to comprehensive analytics and reports on rental trends, customer behavior, and dress performance.
+   - Reporting tools enable admins to derive actionable insights for optimizing inventory management and business strategies.
+
 
 ### Structure
 
