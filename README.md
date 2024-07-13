@@ -28,11 +28,43 @@ Find your perfect look for any occasion with StyleSpark party dress rental servi
 
 ### Live Demo
 
-A live demo of the website can be found [here](https://example.com/).
+A live demo of the website can be found [here](https://project5-stylespark-367466e38579.herokuapp.com/).
 
 ## UX
 
-The website targets three user groups: admins, registered users, and visitors. It focuses on simplicity and easy navigation, centering on showcasing blog articles related to Sri Lanka.
+StyleSpark reimagines fashion by offering a curated selection of stunning dresses for rent. Look and feel your best for every occasion, all while embracing sustainable practices and keeping your budget happy.
+
+Here's what makes the StyleSpark experience exceptional:
+
+- Effortless Browsing:
+  - A clean and intuitive interface lets you effortlessly browse our curated collection.
+  - Filter by occasion to find your perfect match.
+  - High-quality photos and detailed descriptions help you visualize the look.
+- Seamless Rental Process:
+  - Book your desired dress with just a few clicks.
+  - Secure payment options ensure a smooth and worry-free transaction.
+  - Clear instructions guide you through the rental process.
+- Convenient Delivery & Returns:
+  - Enjoy hassle-free delivery right to your doorstep.
+  - Pre-paid return labels make sending the dress back a breeze.
+- Premium Quality & Care:
+  - Every dress is meticulously inspected, cleaned, and maintained to ensure pristine condition.
+  - We provide detailed care instructions so you can look your best without worry.
+  - Should any issue arise with the dress upon arrival, our responsive customer service is here to assist you.
+- Sustainable Style:
+  - Embrace fashion with a conscience.
+  - Renting reduces fashion waste and promotes environmental responsibility.
+  - Join the StyleSpark community and make a positive impact alongside looking fabulous.
+- Affordable Luxury:
+  - Access designer-worthy looks at a fraction of the cost of buying.
+  - Refresh your wardrobe for every occasion without breaking the bank.
+  - Experience the joy of high fashion without the hefty price tag.
+- StyleSpark empowers you to:
+  - Look and feel your absolute best for any event.
+  - Experiment with different styles and discover your unique fashion voice.
+  - Embrace sustainable practices and contribute to a greener future.
+
+Get started with StyleSpark today and redefine the way you experience fashion!
 
 ## User Stories
 
