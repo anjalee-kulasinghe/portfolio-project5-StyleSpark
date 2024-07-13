@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'crispy_forms',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -52,9 +53,9 @@ INSTALLED_APPS = [
     'cart',
     'checkout',
     'profiles',
+    'about'
 
-    # Other
-    'crispy_forms',
+    
 ]
 
 MIDDLEWARE = [
