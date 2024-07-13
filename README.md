@@ -423,7 +423,77 @@ The purpose of the dress rental platform is to provide customers with a convenie
 
 ### Structure
 
-The website follows a traditional web structure with a persistent top navigation bar allowing access to different sections. It includes sections for Home, Blog, City Guide, Food, Travel Tips, Contact Us, Search, Sign In, Sign Up, and Logout, facilitating easy navigation and user engagement.
+### 1. URLs (`urls.py`)
+
+- **/about/**: About page providing information about the project.
+- **/cart/**: Shopping cart for adding dresses and proceeding to checkout.
+  - **/cart/add/{dress_id}/**: Add a dress to the cart.
+  - **/cart/remove/{dress_id}/**: Remove a dress from the cart.
+- **/checkout/**: Handles the checkout process including rental duration selection, payment method, and delivery/pickup details.
+  - **/checkout/success/**: Success page after completing the checkout process.
+- **/home/**: Homepage displaying featured dresses, categories, and search functionality.
+- **/media/**: Media files such as dress images.
+- **/products/**: Displays available dresses with filtering options.
+  - **/products/{category_id}/**: Dresses filtered by a specific category.
+  - **/products/detail/{dress_id}/**: Detailed view of a specific dress including images, description, size guide, rental price, and original price.
+- **/profiles/**: User profiles and management.
+  - **/profiles/{user_id}/**: Profile page for a specific user.
+- **/static/**: Static files like CSS and JavaScript.
+- **/admin/**: Admin dashboard for managing inventory, orders, and customer support.
+  - **/admin/inventory/**: Inventory management.
+    - **/admin/inventory/add/**: Form to add a new dress including details and images.
+    - **/admin/inventory/edit/{dress_id}/**: Form to edit existing dress details.
+    - **/admin/inventory/remove/{dress_id}/**: Remove a dress from inventory.
+  - **/admin/orders/**: Order management.
+    - **/admin/orders/all/**: List of all orders with filtering and status update options.
+    - **/admin/orders/detail/{order_id}/**: Detailed view of a specific order with customer details, dress rented, status, and tracking information.
+
+### 2. Views (`views.py`)
+
+- **AboutView**: Renders the about page providing information about the project.
+- **CartView**: Manages the shopping cart, allowing users to add, remove dresses, and proceed to checkout.
+- **CheckoutView**: Handles the checkout process including rental duration selection, payment method, and delivery/pickup details.
+- **HomeView**: Renders the homepage with featured dresses, categories, and search functionality.
+- **ProductListView**: Displays a list of dresses with filtering options based on category, size, color, and price.
+- **ProductDetailView**: Shows detailed information about a specific dress including images, description, size guide, rental price, and original price.
+- **ProfileView**: Handles user profiles and displays user-specific information.
+- **AdminDashboardView**: Provides an admin dashboard for managing inventory, orders, and customer support.
+- **InventoryManagementView**: Handles adding, editing, and removing dresses from the inventory.
+- **OrderManagementView**: Manages order processing, status updates, and tracking information.
+
+### 3. Templates (`templates/`)
+
+- **base.html**: Base template providing the common structure for all pages.
+- **about.html**: Template for the about page providing information about the project.
+- **cart.html**: Template for managing the shopping cart, adding, removing dresses, and proceeding to checkout.
+- **checkout.html**: Template for the checkout process including rental duration selection, payment method, and delivery/pickup details.
+- **checkout_success.html**: Template displayed upon successful completion of the checkout process.
+- **index.html**: Template for the homepage displaying featured dresses, categories, and search functionality.
+- **product_list.html**: Template for displaying a list of dresses with filtering options.
+- **product_detail.html**: Template for showing detailed information about a specific dress.
+- **profile.html**: Template for displaying user profile information.
+- **admin_dashboard.html**: Template for the admin dashboard managing inventory, orders, and customer support.
+- **inventory_management.html**: Template for managing inventory, adding, editing, and removing dresses.
+- **order_management.html**: Template for managing order processing, status updates, and tracking information.
+
+
+### 4. Models (`models.py`)
+
+- **User**: Model for storing user information including email, password, and profile details.
+- **Dress**: Model for storing dress information such as category, size, color, rental price, original price, and availability.
+- **Order**: Model for tracking orders including customer details, dress rented, rental duration, status, and tracking information.
+
+### 5. Forms (`forms.py`)
+
+- **UserRegistrationForm**: Form for user registration and account creation.
+- **UserLoginForm**: Form for user login and authentication.
+- **CartForm**: Form for managing the shopping cart, adding, removing dresses, and proceeding to checkout.
+- **CheckoutForm**: Form for handling the checkout process including rental duration selection, payment method, and delivery/pickup details.
+
+### 6. Settings (`settings.py`)
+
+- Configuration settings for Django including database connection, static files, templates, authentication, security, and installed apps.
+
 
 ### Technologies
 
