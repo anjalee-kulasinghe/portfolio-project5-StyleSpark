@@ -68,7 +68,264 @@ Get started with StyleSpark today and redefine the way you experience fashion!
 
 ## User Stories
 
-As the developer, I aimed to secure this travel blog, empowering users to create profiles, share adventures through posts with photos, and interact with each other's content. For deeper exploration, users can search and discover new destinations based on keywords, locations, or trending topics, while admins manage users and curate featured content.
+As the developer of StyleSpark, I aimed to create a secure dress rental site that provides an intuitive and enjoyable experience for users and efficient management tools for administrators. Here are the user stories that outline the features and functionality of the platform:
+
+### Customer Perspective
+
+#### Browsing and Searching:
+
+**User Story:**
+As a user, I want to browse dresses by category (e.g., evening, cocktail, wedding) so that I can find dresses suitable for my event.
+
+**Acceptance Criteria:**
+
+- Users can see categories on the homepage.
+- Clicking on a category displays dresses specific to that category.
+- Users can filter dresses by size, color, and price within the category.
+
+**User Story:**
+As a user, I want to filter dresses by size, color, and price so that I can easily find a dress that meets my requirements.
+
+**Acceptance Criteria:**
+
+- Users can access filters on the browsing page.
+- Applying filters updates the list of dresses displayed.
+- Users can combine multiple filters (e.g., size and color).
+
+**User Story:**
+As a user, I want to search for dresses by keyword so that I can quickly locate specific styles or designers.
+
+**Acceptance Criteria:**
+
+- A search bar is available on the website.
+- Entering a keyword and pressing search displays relevant results.
+- Search results are accurate and relevant to the keyword.
+
+#### Dress Details:
+
+**User Story:**
+As a user, I want to view detailed information about a dress (e.g., size guide, material, rental price, original price) so that I can make an informed decision.
+
+**Acceptance Criteria:**
+
+- Dress detail pages include size guide, material, rental price, and original price.
+- Users can easily access the detailed information from the browsing page.
+
+**User Story:**
+As a user, I want to see high-quality images of the dress from multiple angles so that I can assess its appearance.
+
+**Acceptance Criteria:**
+
+- Dress detail pages include high-quality images.
+- Images are available from multiple angles (front, back, side).
+- Users can zoom in on images for a closer look.
+
+#### Customer Reviews:
+
+**User Story:**
+As a user, I want to read reviews and ratings from other customers who have rented the dress so that I can measure its quality and fit.
+
+**Acceptance Criteria:**
+
+- Dress detail pages include customer reviews and ratings.
+- Reviews are sortable by most recent, highest rating, and lowest rating.
+
+**User Story:**
+As a user, I want to leave a review after renting a dress so that I can share my experience with others.
+
+**Acceptance Criteria:**
+
+- Users can submit reviews only if they have rented the dress.
+- Reviews include a star rating and a text comment.
+- Submitted reviews are displayed on the dress detail page.
+
+#### Rental Process:
+
+**User Story:**
+As a user, I want to select the rental duration (e.g., 4 days, 7 days) so that I can have the dress for the appropriate length of time.
+
+**Acceptance Criteria:**
+
+- Users can select rental duration options on the dress detail page.
+- Rental price updates based on selected duration.
+- Selected duration is reflected in the cart and checkout process.
+
+**User Story:**
+As a user, I want to add a dress to my cart and proceed to checkout so that I can complete my rental.
+
+**Acceptance Criteria:**
+
+- Users can add dresses to their cart.
+- The cart displays selected dresses with rental details (duration, price).
+- Users can proceed to checkout from the cart page.
+
+#### Account Management:
+
+**User Story:**
+As a user, I want to create an account so that I can save my personal information and order history.
+
+**Acceptance Criteria:**
+
+- Users can create an account using email and password.
+- Account creation is confirmed via email.
+- Users can view and manage their personal information and order history.
+
+**User Story:**
+As a user, I want to log in to my account so that I can view and manage my rentals.
+
+**Acceptance Criteria:**
+
+- Users can log in using email and password.
+- Logged-in users can access their account dashboard.
+- The dashboard includes order history and rental details.
+
+#### Payment and Delivery/Pickup:
+
+**User Story:**
+As a user, I want to choose my preferred payment method (e.g., credit card, PayPal) so that I can pay for my rental securely.
+
+**Acceptance Criteria:**
+
+- Users can select from multiple payment methods at checkout.
+- Payment processing is secure and confirms successful transactions.
+- Users receive a confirmation email upon successful payment.
+
+**User Story:**
+As a user, I want to provide a delivery address so that the dress can be shipped to me.
+
+**Acceptance Criteria:**
+
+- Users can enter and save a delivery address during checkout.
+- The delivery address is confirmed before placing the order.
+- Users receive tracking information once the dress is shipped.
+
+**User Story:**
+As a user, I want to track my order so that I can know when to expect delivery.
+
+**Acceptance Criteria:**
+
+- Users receive a tracking number once the dress is shipped.
+- Users can access order tracking from their account dashboard.
+- Tracking information is updated in real-time.
+
+**User Story:**
+As a user, I want to get details of the pickup location so that I can come and pick up my order.
+
+**Acceptance Criteria:**
+
+- Users receive a pickup location address.
+- Pickup options are available for different times and dates.
+
+#### Returns:
+
+**User Story:**
+As a user, I want to receive instructions on how to return the dress so that I can send it back easily.
+
+**Acceptance Criteria:**
+
+- Return instructions are provided with the dress delivery.
+- Instructions are also available in the user’s account dashboard.
+- Return packaging and shipping labels are included.
+
+**User Story:**
+As a user, I want to schedule a return pickup so that I don’t have to worry about shipping the dress back myself.
+
+**Acceptance Criteria:**
+
+- Users can schedule a return pickup from their account dashboard.
+- Pickup options are available for different times and dates.
+- Users receive confirmation for the scheduled pickup.
+
+### Admin/Owner Perspective
+
+#### Inventory Management:
+
+**User Story:**
+As an admin, I want to add new dresses to the inventory so that they are available for rental.
+
+**Acceptance Criteria:**
+
+- Admins can add dresses with all necessary details (images, sizes, prices).
+- New dresses appear in the relevant categories for customers.
+- Inventory is updated in real-time.
+
+**User Story:**
+As an admin, I want to update dress details (e.g., availability, rental price) so that the information is accurate.
+
+**Acceptance Criteria:**
+
+- Admins can edit existing dress details.
+- Changes are reflected immediately on the website.
+- Customers are notified of significant updates (e.g., price changes).
+
+**User Story:**
+As an admin, I want to remove dresses from the inventory so that they are no longer available for rental.
+
+**Acceptance Criteria:**
+
+- Admins can mark dresses as unavailable or remove them completely.
+- Removed dresses no longer appear in customer searches or categories.
+- Inventory reflects the updated status.
+
+#### Order Management:
+
+**User Story:**
+As an admin, I want to view and manage customer orders so that I can ensure timely processing and delivery.
+
+**Acceptance Criteria:**
+
+- Admins can access a dashboard with all customer orders.
+- Orders can be filtered by status (e.g., pending, shipped, returned).
+- Admins can update order statuses and add tracking information.
+
+**User Story:**
+As an admin, I want to track the status of returned dresses so that I can update the inventory accordingly.
+
+**Acceptance Criteria:**
+
+- Admins can see a list of returned dresses.
+- Return status is updated once the dress is inspected.
+- Inventory is adjusted based on the condition of returned dresses.
+
+#### Customer Support:
+
+**User Story:**
+As an admin, I want to respond to customer inquiries and issues so that I can provide excellent service.
+
+**Acceptance Criteria:**
+
+- Admins can access and respond to customer support tickets.
+- Response times are tracked and reported.
+- Customers receive notifications when their inquiries are addressed.
+
+**User Story:**
+As an admin, I want to manage customer reviews and feedback so that I can address any concerns.
+
+**Acceptance Criteria:**
+
+- Admins can view and moderate customer reviews.
+- Inappropriate or spam reviews can be flagged and removed.
+- Admins can respond to reviews directly to resolve issues.
+
+#### Analytics and Reporting:
+
+**User Story:**
+As an admin, I want to view reports on rental trends and customer behavior so that I can make informed business decisions.
+
+**Acceptance Criteria:**
+
+- Admins can access detailed analytics and reports on rentals.
+- Reports include data on popular dresses, rental durations, and customer demographics.
+- Analytics can be exported for further analysis.
+
+**User Story:**
+As an admin, I want to analyze the performance of different dresses so that I can optimize the inventory.
+
+**Acceptance Criteria:**
+
+- Admins can view performance metrics for each dress (e.g., rental frequency, customer ratings).
+- Data is updated in real-time and presented in a user-friendly format.
+- Insights from performance data are actionable and help in inventory decisions.
 
 ### Strategy
 
