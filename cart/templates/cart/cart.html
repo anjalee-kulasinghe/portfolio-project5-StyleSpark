@@ -90,7 +90,9 @@
                                 <tr>
                                     <td colspan="5" class="pt-5 text-right">
                                         <h6><strong>Cart Total: SEK{{ total|floatformat:2 }}</strong></h6>
-                                        <h6>Delivery: SEK{{ delivery|floatformat:2 }}</h6>
+                                        {% if cart_items %}
+                                            <h6>Delivery: SEK{{ delivery|floatformat:2 }}</h6>
+                                        {% endif %}
                                         <h4 class="mt-4"><strong>Grand Total: SEK{{ grand_total|floatformat:2 }}</strong></h4>
                                     </td>
                                 </tr>

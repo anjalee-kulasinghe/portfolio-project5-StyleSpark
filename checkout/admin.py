@@ -1,5 +1,7 @@
 from django.contrib import admin
 from .models import Order, OrderLineItem
+from django.db.models import Sum
+from django.conf import settings
 
 class OrderLineItemAdminInline(admin.TabularInline):
     model = OrderLineItem
@@ -25,5 +27,18 @@ class OrderAdmin(admin.ModelAdmin):
                     'grand_total',)
 
     ordering = ('-date',)
+
+    def delivery_cost(self, obj):
+        return obj.delivery_cost
+
+    def order_total(self, obj):
+        return obj.order_total
+
+    def grand_total(self, obj):
+        return obj.grand_total
+
+    delivery_cost.short_description = 'Delivery Cost'
+    order_total.short_description = 'Order Total'
+    grand_total.short_description = 'Grand Total'
 
 admin.site.register(Order, OrderAdmin)

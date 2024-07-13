@@ -20,35 +20,36 @@ def cart_contents(request):
     if not isinstance(cart, dict):
         cart = {}
 
-    # Iterate through cart items
-    for item_id, item_data in cart.items():
-        try:
-            # Ensure item_data is a dictionary (handle first-time addition without size)
-            if not isinstance(item_data, dict):
-                item_data = {'items_by_size': {}}
+    # Check if cart is empty
+    if not cart:
+        delivery = Decimal(0)  # Set delivery fee to 0 if cart is empty
+    else:
+        delivery = Decimal(settings.FIXED_DELIVERY_FEE)  # Set delivery fee from settings
 
-            # Access product details
-            product = get_object_or_404(Product, pk=item_id)
+        # Iterate through cart items
+        for item_id, item_data in cart.items():
+            try:
+                # Ensure item_data is a dictionary (handle first-time addition without size)
+                if not isinstance(item_data, dict):
+                    item_data = {'items_by_size': {}}
 
-            # Debugging: Print cart content
-            print(f"Item ID: {item_id}, Item data: {item_data}")
+                # Access product details
+                product = get_object_or_404(Product, pk=item_id)
 
-            # Iterate through item sizes and quantities
-            for size, quantity in item_data.get('items_by_size', {}).items():
-                total += quantity * product.price
-                product_count += quantity
-                cart_items.append({
-                    'item_id': item_id,
-                    'quantity': quantity,
-                    'product': product,
-                    'size': size,
-                })
-        except AttributeError as e:
-            # Handle specific error where item_data is not a dictionary
-            print(f"Error processing item ID {item_id}: {e}")
+                # Iterate through item sizes and quantities
+                for size, quantity in item_data.get('items_by_size', {}).items():
+                    total += quantity * product.price
+                    product_count += quantity
+                    cart_items.append({
+                        'item_id': item_id,
+                        'quantity': quantity,
+                        'product': product,
+                        'size': size,
+                    })
+            except AttributeError as e:
+                # Handle specific error where item_data is not a dictionary
+                print(f"Error processing item ID {item_id}: {e}")
 
-    # Calculate delivery and grand total
-    delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
     grand_total = total + delivery
 
     context = {
