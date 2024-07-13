@@ -29,7 +29,7 @@
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="product-details-container mb-5 mt-md-5">
                     <p class="mb-0">{{ product.name }}</p>
-                    <p class="lead mb-0 text-left font-weight-bold">SEK{{ product.price }} <br>
+                    <p class="lead mb-0 text-left font-weight-bold">SEK{{ product.price }} (Per day) <br>
                         {% if product.retail_price %}
                             <span class="retail-price">SEK{{ product.retail_price }} (Retail Price)</span><br>
                         {% endif %}
@@ -89,6 +89,17 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- Rental Duration Selection -->
+                            <div class="col-12 mt-3">
+                                <label for="start_date">Rental Start Date:</label>
+                                <input type="date" id="start_date" name="start_date" class="form-control rounded-0" required>
+                            </div>
+                            <div class="col-12 mt-3">
+                                <label for="end_date">Rental End Date:</label>
+                                <input type="date" id="end_date" name="end_date" class="form-control rounded-0" required>
+                            </div>
+                            <!-- End Rental Duration Selection -->
 
                             <div class="col-12">
                                 <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-5">

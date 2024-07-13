@@ -1,14 +1,16 @@
 from django import forms
 from .models import Order
 
-
 class OrderForm(forms.ModelForm):
+    rental_start_date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}), required=True)
+    rental_end_date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}), required=True)
+
     class Meta:
         model = Order
         fields = ('full_name', 'email', 'phone_number',
                   'street_address1', 'street_address2',
                   'town_or_city', 'postcode', 'country',
-                  'county',)
+                  'county', 'rental_start_date', 'rental_end_date')
 
     def __init__(self, *args, **kwargs):
         """
@@ -25,6 +27,8 @@ class OrderForm(forms.ModelForm):
             'street_address1': 'Street Address 1',
             'street_address2': 'Street Address 2',
             'county': 'County, State or Locality',
+            'rental_start_date': 'Rental Start Date',
+            'rental_end_date': 'Rental End Date',
         }
 
         self.fields['full_name'].widget.attrs['autofocus'] = True
