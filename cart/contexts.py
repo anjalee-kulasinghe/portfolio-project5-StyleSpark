@@ -4,41 +4,38 @@ from django.shortcuts import get_object_or_404
 from products.models import Product
 
 def cart_contents(request):
-    """
-    Calculates cart totals and prepares context data for cart view.
-
-    Returns:
-        A dictionary containing cart items, totals, and delivery information.
-    """
-
     cart_items = []
-    total = 0
+    total = Decimal(0)
     product_count = 0
-    cart = request.session.get('cart', {})  # Initialize cart as empty dictionary if not found
+    cart = request.session.get('cart', {})
 
-    # Ensure cart is always a dictionary
     if not isinstance(cart, dict):
         cart = {}
 
-    # Check if cart is empty
     if not cart:
-        delivery = Decimal(0)  # Set delivery fee to 0 if cart is empty
+        delivery = Decimal(0)
     else:
-        delivery = Decimal(settings.FIXED_DELIVERY_FEE)  # Set delivery fee from settings
+        try:
+            delivery = Decimal(settings.FIXED_DELIVERY_FEE)
+        except (ValueError, TypeError):
+            delivery = Decimal(0)
 
-        # Iterate through cart items
         for item_id, item_data in cart.items():
             try:
-                # Ensure item_data is a dictionary (handle first-time addition without size)
                 if not isinstance(item_data, dict):
-                    item_data = {'items_by_size': {}}
+                    item_data = {'items_by_size': {}, 'quantity': 0}
 
-                # Access product details
                 product = get_object_or_404(Product, pk=item_id)
+                rental_days = Decimal(item_data.get('rental_days', 1))
 
-                # Iterate through item sizes and quantities
-                for size, quantity in item_data.get('items_by_size', {}).items():
-                    total += quantity * product.price
+                items_by_size = item_data.get('items_by_size', {})
+                if not isinstance(items_by_size, dict):
+                    items_by_size = {}
+
+                for size, quantity in items_by_size.items():
+                    if not isinstance(quantity, int):
+                        quantity = int(quantity)
+                    total += Decimal(quantity) * product.price * rental_days
                     product_count += quantity
                     cart_items.append({
                         'item_id': item_id,
@@ -46,11 +43,31 @@ def cart_contents(request):
                         'product': product,
                         'size': size,
                     })
+
+                if not items_by_size:
+                    quantity = item_data.get('quantity', 0)
+                    if not isinstance(quantity, int):
+                        quantity = int(quantity)
+                    total += Decimal(quantity) * product.price * rental_days
+                    product_count += quantity
+                    cart_items.append({
+                        'item_id': item_id,
+                        'quantity': quantity,
+                        'product': product,
+                        'size': None,
+                    })
+
             except AttributeError as e:
-                # Handle specific error where item_data is not a dictionary
                 print(f"Error processing item ID {item_id}: {e}")
+            except Exception as e:
+                print(f"Unexpected error processing item ID {item_id}: {e}")
 
     grand_total = total + delivery
+
+    # Debugging output
+    print(f"Total: {total}")
+    print(f"Delivery: {delivery}")
+    print(f"Grand Total: {grand_total}")
 
     context = {
         'cart_items': cart_items,

@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+from decimal import Decimal
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -30,7 +31,7 @@ ALLOWED_HOSTS = [
     '.herokuapp.com',
     'localhost',
     '127.0.0.1',
-    '8000-anjaleekula-portfoliopr-dij6j2aqej7.ws.codeinstitute-ide.net'
+    '8000-anjaleekula-portfoliopr-5x9c2lo43p2.ws.codeinstitute-ide.net'
 ]
 
 
@@ -170,7 +171,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
@@ -184,12 +185,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Fixed delivery fee
 FIXED_DELIVERY_FEE = 65
 
+# Fixed delivery fee
+FIXED_DELIVERY_FEE = Decimal('65')
+
 # Stripe
-FREE_DELIVERY_THRESHOLD = 50
-FIXED_DELIVERY_FEE = 65
+FREE_DELIVERY_THRESHOLD = Decimal('50')
 STRIPE_CURRENCY = 'sek'
-#STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
-#STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 STRIPE_PUBLIC_KEY = 'pk_test_51PaRXyBrAPTiS3WiYMEIEDOpncEyniNMShuPexOkQbjTaAz24HB9O8w8nUt4ycJmeEbz2lLrZ4OI2zeHz0o7XwKZ00eBL1oC9L'
 STRIPE_SECRET_KEY = 'sk_test_51PaRXyBrAPTiS3WinYfI7RKeXVH1w3aMv26qYN6wgT9f1pYGXWYFiiSHPPqtQXBcqfZLF6N4ZONoJ6XaHKSDDRKm00jK8APTYT'
 
