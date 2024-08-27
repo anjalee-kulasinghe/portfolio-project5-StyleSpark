@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-$^pc4vz(bs@axk7wlv5vtrvq*%7efaz@sufz5dheb%8+3_^zj9
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'project5-stylespark.herokuapp.com',
+    '.herokuapp.com',
     'localhost',
     '127.0.0.1',
     '8000-anjaleekula-portfoliopr-5x9c2lo43p2.ws.codeinstitute-ide.net'
